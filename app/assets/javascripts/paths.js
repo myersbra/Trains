@@ -13,13 +13,16 @@ $.ajax({
 
 var pathIDs = []
 var possiblePaths = []
+  var origin;
+  var destination;
+  var nodes = {};
 
 
 function draw(links) {
 
-  var origin;
-  var destination;
-  var nodes = {};
+  // var origin;
+  // var destination;
+  // var nodes = {};
 
 // Compute the distinct nodes from the links.
 links.forEach(function(link) {
@@ -27,7 +30,7 @@ links.forEach(function(link) {
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
 
-var width = 600,
+var width = 800,
     height = 600,
     radius = 15;
 
@@ -129,11 +132,10 @@ function resetColors() {
       }
 
   d3.select(origin).style("fill", "white");
-  d3.selectAll("circle").style("fill", "white").style("stroke", "black");
+  d3.selectAll("circle").style("fill", "#200080").style("stroke", "black");
 }
 
 function newfunction(data) {
-   console.log(data);
 
     var table = document.getElementById("table-body");
 
@@ -154,11 +156,9 @@ function newfunction(data) {
       row.insertCell(1).innerHTML = data[i][1];
       row.insertCell(2).innerHTML = data[i][2];
 
-      console.log(row);
-
       row.addEventListener("mouseover", function() {
-        console.log("hover!")
-        drawRoute(data, i - 1)
+        console.log(this.cells[0].innerHTML)
+        drawRoute(data, this.cells[0].innerHTML - 1)
       });
 
     }
@@ -168,13 +168,12 @@ function newfunction(data) {
 
     function drawRoute(data, j) {
       resetColors();
-      console.log(j)
       if (typeof data[0] !== 'undefined') {
         for (var i = 0; i < data[j][0].length; i++) {
           d3.select("#" + data[j][0][i]).style("fill", "magenta").style("stroke", "white");
-            console.log(d3.select("#" + data[j][0][i] + "-" + data[j][0][i + 1]));
+            // console.log(d3.select("#" + data[j][0][i] + "-" + data[j][0][i + 1]));
             var mypath = d3.select("#" + data[j][0][i] + "-" + data[j][0][i + 1]);
-            console.log(mypath.style.fill);
+            // console.log(mypath.style.fill);
             d3.select("#" + data[j][0][i] + "-" + data[j][0][i + 1]).style("stroke", "white").style("marker-end", "url(#selected-arrow)");
         }
       }
@@ -186,7 +185,7 @@ var text = svg.append("g").selectAll("text")
   .enter().append("text")
     .attr("x", 8)
     .attr("y", ".5em")
-    // .attr("fill", "white")
+    .attr("fill", "#e2e2ff")
     // .attr("stroke", "black")
     .text(function(d) { return d.name; });
 
@@ -219,6 +218,10 @@ function linkArc(d) {
 function transform(d) {
   return "translate(" + d.x + "," + d.y + ")";
 }
+
+}
+
+function returnRoute() {
 
 }
 

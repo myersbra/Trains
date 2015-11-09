@@ -18,6 +18,24 @@
 @import "bootstrap";
 
 body {
+  /*color: "white";*/
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000060+0,000070+20,000080+50,000070+80,000060+100 */
+  background: #000060; /* Old browsers */
+  background: -moz-linear-gradient(left,  #000060 0%, #000070 20%, #000080 50%, #000070 80%, #000060 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000060), color-stop(20%,#000070), color-stop(50%,#000080), color-stop(80%,#000070), color-stop(100%,#000060)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* IE10+ */
+  background: linear-gradient(to right,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000060', endColorstr='#000060',GradientType=1 ); /* IE6-9 */
+}
+
+#table {
+  color: #e2e2ff;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #200080;
 }
 
 .node, circle {
@@ -28,31 +46,14 @@ body {
 }
 
 #left {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bbbbbb+0,eeeeee+20,ffffff+50,eeeeee+80,bbbbbb+100 */
-  background: #bbbbbb; /* Old browsers */
-  background: -moz-linear-gradient(left,  #bbbbbb 0%, #eeeeee 20%, #ffffff 50%, #eeeeee 80%, #bbbbbb 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bbbbbb), color-stop(20%,#eeeeee), color-stop(50%,#ffffff), color-stop(80%,#eeeeee), color-stop(100%,#bbbbbb)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  #bbbbbb 0%,#eeeeee 20%,#ffffff 50%,#eeeeee 80%,#bbbbbb 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  #bbbbbb 0%,#eeeeee 20%,#ffffff 50%,#eeeeee 80%,#bbbbbb 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  #bbbbbb 0%,#eeeeee 20%,#ffffff 50%,#eeeeee 80%,#bbbbbb 100%); /* IE10+ */
-  background: linear-gradient(to right,  #bbbbbb 0%,#eeeeee 20%,#ffffff 50%,#eeeeee 80%,#bbbbbb 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb', endColorstr='#bbbbbb',GradientType=1 ); /* IE6-9 */
 
   float: left;
   height: 100vh;
-  width: 30vw;
+  width: 25vw;
 }
 
 #right {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000060+0,000070+20,000080+50,000070+80,000060+100 */
-  background: #000060; /* Old browsers */
-  background: -moz-linear-gradient(left,  #000060 0%, #000070 20%, #000080 50%, #000070 80%, #000060 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000060), color-stop(20%,#000070), color-stop(50%,#000080), color-stop(80%,#000070), color-stop(100%,#000060)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* IE10+ */
-  background: linear-gradient(to right,  #000060 0%,#000070 20%,#000080 50%,#000070 80%,#000060 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000060', endColorstr='#000060',GradientType=1 ); /* IE6-9 */
+ 
 
   overflow: hidden;
   height: 100vh;
