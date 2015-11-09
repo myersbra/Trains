@@ -22,8 +22,6 @@ class PathsController < ApplicationController
     end
 
     def find_paths
-      @answer = {"a" => "b"}.to_json
-
       nodes = {}
       Path.select(:origin).distinct.each do |p|
         nodes[p.origin] = {}
@@ -33,6 +31,7 @@ class PathsController < ApplicationController
         nodes[p.origin][p.destination] = p.distance
       end
 
+      # DFS implementation
       def search(node, destination, hash, current_list, cost, solutions)
         if node == destination
           solutions << [current_list, cost, current_list.length - 1]
