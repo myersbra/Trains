@@ -105,7 +105,13 @@ resetColors();
       d3.select(origin).style("fill", "magenta");
       d3.select(destination).style("fill", "magenta");
 
-      if (typeof origin !== 'undefined') {
+      AJAXSolution(origin, destination);
+
+      
+    };
+
+function AJAXSolution(origin, destination) {
+  if (typeof origin !== 'undefined') {
         console.log(origin.getAttribute("name") + " => " + destination.getAttribute("name"));
         $.ajax({
         url: 'find_paths',
@@ -124,7 +130,16 @@ resetColors();
         }
         });
       }
-    };
+}
+
+document.getElementById("return-btn").addEventListener("click", function(){
+    [origin, destination] = [destination, origin];
+    AJAXSolution(origin, destination);
+});
+
+// function returnRoute() {
+  
+// }
 
 function resetColors() {
       for (var i = 0; i < pathIDs.length; i++) {
@@ -218,10 +233,6 @@ function linkArc(d) {
 function transform(d) {
   return "translate(" + d.x + "," + d.y + ")";
 }
-
-}
-
-function returnRoute() {
 
 }
 
